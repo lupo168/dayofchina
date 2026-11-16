@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day of China — A Day in the Life of a Chinese Person</title>
+  <meta name="description" content="Day of China teaches Chinese traditional culture the way it is actually lived — one ordinary day at a time. From morning tai chi in the park to a foot soak before bed.">
+  <meta property="og:title" content="Day of China">
+  <meta property="og:description" content="A day in the life of a Chinese person — tai chi, tea, calligraphy, the wet market, and a family dinner.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#faf6ef">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #faf6ef;
+      --ink: #211c16;
+      --ink-soft: #5c554b;
+      --vermilion: #a93226;
+      --vermilion-deep: #8e2a1f;
+      --line: #e3d9c8;
+      --card: #fffdf8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB",
+        "Microsoft YaHei", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+
+    a { color: var(--vermilion); }
+    a:hover { color: var(--vermilion-deep); }
+    :where(a:any-link):focus-visible {
+      outline: 3px solid var(--vermilion);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      max-width: 44rem;
+      margin-inline: auto;
+      padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+    }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      padding-block: 1.5rem 0;
+    }
+
+    .wordmark {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .wordmark span { color: var(--vermilion); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      padding-block: clamp(3rem, 10vw, 6rem) clamp(2rem, 6vw, 3.5rem);
+      border-block-end: 1px solid var(--line);
+    }
+
+    .badge {
+      display: inline-block;
+      margin: 0 0 1.25rem;
+      padding: 0.3rem 0.85rem;
+      border: 1px solid var(--vermilion);
+      border-radius: 999px;
+      color: var(--vermilion);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(2.75rem, 1.5rem + 6vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .tagline {
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.25rem, 1rem + 1.5vw, 1.625rem);
+      line-height: 1.35;
+      color: var(--ink-soft);
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 38rem;
+    }
+
+    .lede strong { color: var(--vermilion-deep); }
+
+    /* ---------- Sections ---------- */
+    section { padding-block: clamp(2rem, 6vw, 3.5rem); }
+
+    h2 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.5rem, 1.25rem + 1.25vw, 1.875rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .section-intro {
+      margin: 0 0 2rem;
+      color: var(--ink-soft);
+    }
+
+    /* ---------- The day: ordered timeline ---------- */
+    .day {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-block-start: 1px solid var(--line);
+    }
+
+    .moment {
+      display: grid;
+      grid-template-columns: 4.5rem 1fr;
+      gap: 0.25rem 1.25rem;
+      padding-block: 1.25rem;
+      border-block-end: 1px solid var(--line);
+    }
+
+    .moment time {
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      color: var(--vermilion);
+      padding-block-start: 0.15rem;
+    }
+
+    .moment h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
+
+    .moment p {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+
+    .moment p .zh {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* ---------- About ---------- */
+    .about p { margin: 0 0 1rem; }
+    .about p:last-child { margin-block-end: 0; }
+
+    /* ---------- Footer ---------- */
+    .site-footer {
+      border-block-start: 1px solid var(--line);
+      padding-block: 1.75rem 2.5rem;
+      color: var(--ink-soft);
+      font-size: 0.9375rem;
+    }
+
+    .site-footer p { margin: 0 0 0.25rem; }
+    .site-footer p:last-child { margin-block-end: 0; }
+
+    @media (max-width: 30rem) {
+      .moment { grid-template-columns: 1fr; }
+      .moment time { padding-block-start: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <p class="wordmark">Day <span>of</span> China</p>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <p class="badge">Opening soon</p>
+        <h1 id="page-title">Day of China</h1>
+        <p class="tagline">A Day in the Life of a Chinese Person</p>
+        <p class="lede">Learn Chinese culture the way it is actually lived — <strong>one ordinary day at a time</strong>. From morning tai chi in the park to a foot soak before bed, this is a day in the life of a Chinese person. Our first guide is on its way.</p>
+      </section>
+
+      <section aria-labelledby="day-heading">
+        <h2 id="day-heading">One day, ten moments</h2>
+        <p class="section-intro">No lectures, no lists of dynasties. Just a day — the way millions of Chinese people still live it.</p>
+        <ol class="day">
+          <li class="moment">
+            <time datetime="06:30">6:30</time>
+            <div>
+              <h3>Morning tai chi in the park</h3>
+              <p>The day starts slowly, in the park, moving with the neighbours. <span class="zh" lang="zh">太极</span> (tài jí) — tai chi.</p>
+            </div>
+          </li>
+          <li class="moment">
+            <time datetime="07:30">7:30</time>
+            <div>
+              <h3>Breakfast</h3>
+              <p>Warm soy milk, a crisp <span class="zh" lang="zh">油条</span> (yóutiáo) fried dough stick, steamed <span class="zh" lang="zh">包子</span> (bāozi) buns, and a bowl of congee, <span class="zh" lang="zh">粥</span> (zhōu).</p>
+            </div>
+          </li>
+          <li class="moment">
+            <time datetime="09:00">9:00</time>
+            <div>
+              <h3>Tea, reading, calligraphy</h3>
+              <p>A pot of tea, <span class="zh" lang="zh">茶</span> (chá), a book, and a brush. Calligraphy, <span class="zh" lang="zh">书法</span> (shūfǎ), is practice — not performance.</p>
+            </div>
+          </li>
+          <li class="moment">
+            <time datetime="11:00">11:00</time>
+            <div>
+              <h3>The wet market</h3>
+              <p>Picking vegetables by hand, bargaining a little, knowing the vendors by name. The <span class="zh" lang="zh">菜市场</span> (càishìchǎng) is where dinner begins.</p>
+            </div>
+          </li>
+          <li class="moment">
+            <time datetime="12:00">12:00</time>
+            <div>
+              <h3>Cook lunch, eat with family</h3>
+              <p>Two or three dishes, rice, and everyone at the table. Lunch is a family meal, not a desk meal.</p>
+            </div>
+          </li>
+          <li class="moment">
+            <time datetime="13:00">13:00</time>
+            <div>
+              <h3>Nap</h3>
+              <p>A short midday rest, <span class="zh" lang="zh">午休</span> (wǔxiū). The whole country slows down for an hour.</p>
+            </div>
+          </li>
+          <li class="moment">
+            <time datetime="15:00">15:00</time>
+            <div>
+              <h3>Afternoon tea, Go, chess, a stroll</h3>
+              <p>Another pot of tea, a game of Go, <span class="zh" lang="zh">围棋</span> (wéiqí), or Chinese chess, <span class="zh" lang="zh">象棋</span> (xiàngqí), and a slow walk around the block.</p>
+            </div>
+          </li>
+          <li class="moment">
+            <time datetime="17:30">17:30</time>
+            <div>
+              <h3>Cook dinner, stew soup</h3>
+              <p>Dinner takes time. A soup, <span class="zh" lang="zh">煲汤</span> (bāotāng), simmers for hours — it is care, cooked slowly.</p>
+            </div>
+          </li>
+          <li class="moment">
+            <time datetime="19:00">19:00</time>
+            <div>
+              <h3>Dinner, family chat</h3>
+              <p>The table fills up again. The day is talked over, dish by dish.</p>
+            </div>
+          </li>
+          <li class="moment">
+            <time datetime="21:00">21:00</time>
+            <div>
+              <h3>Foot soak, early sleep</h3>
+              <p>Hot water, <span class="zh" lang="zh">泡脚</span> (pàojiǎo) — a foot soak — and an early night. Tomorrow starts at 6:30 again.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">What is Day of China?</h2>
+        <p>Day of China is a small guide to Chinese traditional culture — taught the way it is lived, not the way it is listed in textbooks. Each guide follows one day: tai chi, tea, calligraphy, cooking, Go, and the quiet habits in between.</p>
+        <p>The first guide, <em>A Day in the Life of a Chinese Person</em>, is coming soon.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Day of China</p>
+      <p>Made with one ordinary day in China.</p>
+    </footer>
+  </div>
+</body>
+</html>
