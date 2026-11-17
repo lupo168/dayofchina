@@ -9,7 +9,7 @@ soak before bed.
 ## Site
 
 - Live: https://dayofchina.com
-- Status: live — homepage, 3 moment pages, guides, and About. The first guide is on its way.
+- Status: live — homepage, 3 moment pages, guides, About, magazine, daily, and the calendar (Nov 2026 – Dec 2027, Gregorian + lunar + solar terms).
 
 ## This repo
 
@@ -21,7 +21,9 @@ dependencies. System font stack only.
 - `daily/` — one short piece a day (today's date, today's solar term, one thing in season).
 - `guides/` — printable PDF guides; the first (Tai Chi) is coming soon.
 - `magazine/` — the magazine: daily pieces become a biweekly issue every solar term, and a monthly issue every month. Coming soon.
+- `calendar/` — the old calendar, month by month (Nov 2026 – Dec 2027): Gregorian dates, lunar dates, the twenty-four solar terms and the festivals. Built from `/tmp/cal_data.json` by `/tmp/doc_build.py`.
 - `about/` — what the site is, and the twelve two-hour periods.
+- `DESIGN.md` — the design system: thesis, tokens with contrast figures, type, spacing, components, references, and the considered decisions.
 - `llms.txt`, `llms-full.txt`, `sitemap.xml`, `robots.txt`.
 
 ## Preview
