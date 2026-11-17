@@ -179,16 +179,55 @@
         scroll-behavior: auto !important;
       }
     }
+  
+    /* ---------- Nav ---------- */
+    .site-nav{display:flex;gap:1.5rem;padding-block:1rem;border-block-end:1px solid var(--line)}
+    .site-nav a{color:var(--ink-soft);text-decoration:none;font-weight:600;font-size:.9375rem}
+    .site-nav a[aria-current="page"]{color:var(--vermilion)}
+    .site-nav a:hover{color:var(--vermilion-deep)}
+    .crumbs{font-size:.8125rem;color:var(--ink-soft);margin:1.5rem 0 0}
+    .crumbs a{color:var(--ink-soft)}
+    .moment-time{color:var(--vermilion);font-weight:700;font-size:.875rem;letter-spacing:.06em;text-transform:uppercase;margin:1rem 0 .5rem}
+    .moment h3 a{color:var(--ink);text-decoration:none}
+    .moment h3 a:hover{color:var(--vermilion);text-decoration:underline}
+    .card{border:1px solid var(--line);background:var(--card);padding:1.25rem;margin-block-end:1rem}
+    .card h3{margin:0 0 .35rem;font-size:1.125rem;line-height:1.35}
+    .card h3 a{color:var(--ink);text-decoration:none}
+    .card h3 a:hover{color:var(--vermilion);text-decoration:underline}
+    .card p{margin:0;color:var(--ink-soft);font-size:.9375rem}
+    .card .soon{color:var(--vermilion);font-weight:700;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase}
+    .card .meta{font-size:.8125rem;color:var(--ink-soft)}
+    .steps li{margin-block-end:.5rem}
+    .words dt{font-weight:700}
+    .words dd{margin:0 0 .75rem;color:var(--ink-soft)}
+    .qa h3{font-size:1rem;margin:1.25rem 0 .25rem}
+    .qa p{margin:0 0 1rem;color:var(--ink-soft)}
+    .pager{display:flex;justify-content:space-between;gap:1rem;border-block-start:1px solid var(--line);padding-block-start:1.25rem;margin-block-start:2.5rem;font-size:.9375rem}
+    .pager span{color:var(--ink-soft)}
+    table{width:100%;border-collapse:collapse;font-size:.9375rem}
+    th,td{border-block-end:1px solid var(--line);padding:.5rem .25rem;text-align:left;vertical-align:top}
+    th{color:var(--ink-soft);font-weight:600}
   </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Day of China",
+  "url": "https://dayofchina.com/",
+  "inLanguage": "en",
+  "description": "Chinese traditional culture the way it is actually lived — one ordinary day at a time."
+}
+</script>
 </head>
 <body>
   <div class="wrap">
+<nav class="site-nav" aria-label="Main"><a href="/" aria-current="page">Home</a><a href="/moments/">Moments</a><a href="/guides/">Guides</a><a href="/about/">About</a></nav>
     <main>
       <section class="hero" aria-labelledby="page-title">
         <p class="badge">Opening soon</p>
         <h1 id="page-title">Day of China</h1>
         <p class="tagline">A Day in the Life of a Chinese Person</p>
-        <p class="lede">Learn Chinese culture the way it is actually lived — <strong>one ordinary day at a time</strong>. From morning Ba Duan Jin and Tai Chi in the park to a foot soak before bed, this is a day in the life of a Chinese person. Our first guide is on its way.</p>
+        <p class="lede">Learn Chinese culture the way it is actually lived — <strong>one ordinary day at a time</strong>. From morning Ba Duan Jin and Tai Chi in the park to a foot soak before bed, this is a day in the life of a Chinese person. Our <a href="/guides/">first guide</a> is on its way.</p>
       </section>
 
       <section aria-labelledby="day-heading">
@@ -198,7 +237,7 @@
           <li class="moment">
             <time datetime="06:30">6:30</time>
             <div>
-              <h3>Ba Duan Jin and Tai Chi in the park</h3>
+              <h3><a href="/moments/ba-duan-jin-tai-chi/">Ba Duan Jin and Tai Chi in the park</a></h3>
               <p class="shichen">卯时 · 5–7 · 大肠经当令</p>
               <p>The day starts slowly, in the park, moving with the neighbours. <span class="zh" lang="zh">八段锦</span> (bā duàn jǐn) — the Eight Brocades, eight gentle stretches to wake the body — followed by <span class="zh" lang="zh">太极</span> (tài jí), Tai Chi, slow and flowing, breath and balance.</p>
             </div>
@@ -222,7 +261,7 @@
           <li class="moment">
             <time datetime="10:30">10:30</time>
             <div>
-              <h3>The wet market</h3>
+              <h3><a href="/moments/wet-market/">The wet market</a></h3>
               <p class="shichen">巳时 · 9–11 · 脾经当令</p>
               <p>Picking vegetables by hand, bargaining a little, knowing the vendors by name. The <span class="zh" lang="zh">菜市场</span> (càishìchǎng) is where dinner begins.</p>
             </div>
@@ -262,7 +301,7 @@
           <li class="moment">
             <time datetime="16:00">16:00</time>
             <div>
-              <h3>Start the soup — seasonal, by the solar terms</h3>
+              <h3><a href="/moments/simmering-soup/">Start the soup — seasonal, by the solar terms</a></h3>
               <p class="shichen">申时 · 15–17 · 膀胱经当令</p>
               <p>A soup, <span class="zh" lang="zh">煲汤</span> (bāotāng), simmers for hours — it is care, cooked slowly. The recipe follows the twenty-four solar terms, <span class="zh" lang="zh">二十四节气</span> (èrshísì jiéqì): what simmers in summer is not what simmers in winter.</p>
             </div>
