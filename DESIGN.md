@@ -11,9 +11,12 @@ seal stamp in vermilion.
 Warm cream with a serif and a terracotta accent is a common generated look.
 Here the palette is the almanac's own materials, not a default: the paper is
 rice paper, the vermilion is the seal stamp (朱砂), the ink is printing ink.
-The vermilion is spent in exactly one place — solar terms, today, and labels —
-and nowhere else. If the vermilion were removed, the site would still be
-itself; if the paper were removed, it would not.
+The vermilion is the site's single accent, spent deliberately and never as a
+background fill or a large area: all links, the moment times and shichen
+labels, the solar terms and festivals and today on the calendar, the
+current-page nav link, and the "Coming soon" labels. If the vermilion were
+removed, the site would still be itself; if the paper were removed, it would
+not.
 
 ## Tokens
 
@@ -67,11 +70,16 @@ drop their text below 4.5:1, and past days are still content.
   their padding; the grid never becomes stacked cards — the grid is the
   meaning.
 - **Day cell**: Gregorian number largest, lunar date smaller and muted, term
-  or festival smallest in vermilion. English first, Chinese as the note.
+  or festival smallest in vermilion — three lines, four when a day carries
+  both a solar term and a festival (8 Aug and 8 Oct 2027).
 - **Focus**: `:focus-visible` — 3 px vermilion outline, 3 px offset.
   Forced Colors Mode: system keywords for the current-page indicator and
   focus ring.
-- **No**: rounded cards, shadows, fills, gradients, emoji, icons, JS.
+- **Cards**: a half-step lighter paper (`#fffdf8`) — a paper card, not a
+  colour fill.
+- **No**: rounded cards, shadows, colour fills, gradients, emoji, icons, JS.
+  The one rounded element on the site is the OPENING SOON badge (a pill, not
+  a card).
 
 ## References (refero.design, 2026-11-17)
 
