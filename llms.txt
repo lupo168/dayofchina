@@ -23,6 +23,10 @@
 
 - [The magazine](https://dayofchina.com/magazine/): One term at a time — daily pieces become a biweekly issue every solar term, and a monthly issue every month. Coming soon.
 
+## Calendar
+
+- [Calendar](https://dayofchina.com/calendar/): The old calendar, month by month — Gregorian dates, lunar dates, the twenty-four solar terms and the festivals, November 2026 to December 2027.
+
 ## About
 
 - [What is Day of China?](https://dayofchina.com/about/): The twelve two-hour periods and how the site works.
