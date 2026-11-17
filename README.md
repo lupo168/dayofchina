@@ -18,7 +18,9 @@ dependencies. System font stack only.
 
 - `index.html` — homepage (English-first; Chinese terms marked with `lang="zh"`).
 - `moments/` — the eleven moments; 3 written so far (6:30, 10:30, 16:00).
+- `daily/` — one short piece a day (today's date, today's solar term, one thing in season).
 - `guides/` — printable PDF guides; the first (Tai Chi) is coming soon.
+- `magazine/` — the magazine: daily pieces become a biweekly issue every solar term, and a monthly issue every month. Coming soon.
 - `about/` — what the site is, and the twelve two-hour periods.
 - `llms.txt`, `llms-full.txt`, `sitemap.xml`, `robots.txt`.
 
