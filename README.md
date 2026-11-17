@@ -9,15 +9,18 @@ soak before bed.
 ## Site
 
 - Live: https://dayofchina.com
-- Status: coming soon — the first guide is on its way.
+- Status: live — homepage, 3 moment pages, guides, and About. The first guide is on its way.
 
 ## This repo
 
-A single static page. No build step, no JavaScript, no tracking, no external
+A static site. No build step, no JavaScript, no tracking, no external
 dependencies. System font stack only.
 
-- `index.html` — the coming-soon homepage (English-first; Chinese terms
-  marked with `lang="zh"`).
+- `index.html` — homepage (English-first; Chinese terms marked with `lang="zh"`).
+- `moments/` — the eleven moments; 3 written so far (6:30, 10:30, 16:00).
+- `guides/` — printable PDF guides; the first (Tai Chi) is coming soon.
+- `about/` — what the site is, and the twelve two-hour periods.
+- `llms.txt`, `llms-full.txt`, `sitemap.xml`, `robots.txt`.
 
 ## Preview
 
