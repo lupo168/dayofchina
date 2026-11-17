@@ -95,7 +95,7 @@
       border: 1px solid var(--vermilion);
       border-radius: 999px;
       color: var(--vermilion);
-      font-size: 0.8125rem;
+      font-size: 0.875rem;
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -106,7 +106,10 @@
       font-size: clamp(2.75rem, 1.5rem + 6vw, 4.5rem);
       line-height: 1.05;
       letter-spacing: -0.02em;
+      text-wrap: balance;
     }
+
+    p { text-wrap: pretty; }
 
     .tagline {
       margin: 0 0 1.5rem;
@@ -130,6 +133,7 @@
       font-size: clamp(1.5rem, 1.25rem + 1.25vw, 1.875rem);
       line-height: 1.25;
       letter-spacing: -0.01em;
+      text-wrap: balance;
     }
 
     .section-intro {
@@ -179,7 +183,7 @@
     .moment .shichen {
       margin: 0 0 0.25rem;
       color: var(--vermilion);
-      font-size: 0.8125rem;
+      font-size: 0.875rem;
       font-weight: 600;
       letter-spacing: 0.08em;
     }
@@ -210,11 +214,14 @@
       }
     }
     /* ---------- Nav ---------- */
-    .site-nav{display:flex;gap:1.5rem;padding-block:1rem;border-block-end:1px solid var(--line)}
-    .site-nav a{color:var(--ink-soft);text-decoration:none;font-weight:600;font-size:.9375rem}
-    .site-nav a[aria-current="page"]{color:var(--vermilion)}
+    .site-nav{padding-block:1rem;border-block-end:1px solid var(--line)}
+    .site-nav ul{display:flex;flex-wrap:wrap;gap:.25rem .5rem;list-style:none;margin:0;padding:0}
+    .site-nav li{margin:0}
+    .site-nav a{display:inline-block;padding:.4rem .55rem;color:var(--ink-soft);text-decoration:none;font-weight:600;font-size:.9375rem}
+    .site-nav a[aria-current="page"]{color:var(--vermilion);text-decoration:underline;text-underline-offset:4px}
     .site-nav a:hover{color:var(--vermilion-deep)}
-    .crumbs{font-size:.8125rem;color:var(--ink-soft);margin:1.5rem 0 0}
+    @media (pointer: coarse){.site-nav a{padding:.55rem .7rem}}
+    .crumbs{font-size:.875rem;color:var(--ink-soft);margin:1.5rem 0 0}
     .crumbs a{color:var(--ink-soft)}
     .moment-time{color:var(--vermilion);font-weight:700;font-size:.875rem;letter-spacing:.06em;text-transform:uppercase;margin:1rem 0 .5rem}
     .moment h3 a{color:var(--ink);text-decoration:none}
@@ -224,8 +231,8 @@
     .card h3 a{color:var(--ink);text-decoration:none}
     .card h3 a:hover{color:var(--vermilion);text-decoration:underline}
     .card p{margin:0;color:var(--ink-soft);font-size:.9375rem}
-    .card .soon{color:var(--vermilion);font-weight:700;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase}
-    .card .meta{font-size:.8125rem;color:var(--ink-soft)}
+    .card .soon{color:var(--vermilion);font-weight:700;font-size:.875rem;letter-spacing:.08em;text-transform:uppercase}
+    .card .meta{font-size:.875rem;color:var(--ink-soft)}
     .steps li{margin-block-end:.5rem}
     .words dt{font-weight:700}
     .words dd{margin:0 0 .75rem;color:var(--ink-soft)}
@@ -236,13 +243,40 @@
     table{width:100%;border-collapse:collapse;font-size:.9375rem}
     th,td{border-block-end:1px solid var(--line);padding:.5rem .25rem;text-align:left;vertical-align:top}
     th{color:var(--ink-soft);font-weight:600}
+    /* ---------- Skip link + visually hidden ---------- */
+    .skip-link{position:absolute;inset-inline-start:1rem;inset-block-start:1rem;z-index:10;background:var(--paper);color:var(--ink);padding:.5rem 1rem;border:2px solid var(--ink);font-weight:700}
+    .visually-hidden:where(:not(:focus-within, :active)){position:absolute!important;clip-path:inset(50%)!important;overflow:hidden!important;width:1px!important;height:1px!important;margin:-1px!important;padding:0!important;border:0!important;white-space:nowrap!important}
+    @media (forced-colors: active){
+      .site-nav a[aria-current="page"]{color:LinkText;text-decoration:underline}
+      :where(a:any-link):focus-visible{outline-color:Highlight}
+    }
+    /* ---------- Calendar ---------- */
+    .cal-month{margin:4rem 0;border-block-start:2px solid var(--ink);padding-block-start:1.5rem}
+    .cal-month h2{font-size:clamp(1.75rem,1.25rem + 2vw,2rem);text-wrap:balance}
+    .cal-meta{color:var(--ink-soft);font-size:.875rem;margin:0 0 1.5rem}
+    .table-wrapper{overflow:auto;container-type:inline-size;scrollbar-gutter:stable;overscroll-behavior:contain}
+    table.cal{width:100%;border-collapse:collapse;font-size:1rem}
+    .cal thead th{position:sticky;top:0;background:var(--paper);z-index:1;color:var(--ink-soft);font-weight:600;font-size:.875rem;padding:.5rem .25rem;border-block-end:1px solid var(--ink-soft);text-align:center}
+    .cal td{text-align:center;vertical-align:top;padding:.6rem .25rem;border-block-end:1px solid var(--line)}
+    .cal .d{display:block;font-size:1.25rem;line-height:1.3;font-variant-numeric:tabular-nums}
+    .cal .l{display:block;font-size:.875rem;color:var(--ink-soft);line-height:1.4}
+    .cal .t,.cal .f{display:block;font-size:.875rem;color:var(--vermilion);font-weight:700;line-height:1.4}
+    .cal td.today .d{color:var(--vermilion);font-weight:700}
+    .cal .today-label{display:block;font-size:.875rem;color:var(--vermilion);font-weight:700}
+    @container (width < 30rem){
+      .cal td{padding:.45rem .1rem}
+      .cal .d{font-size:1.1rem}
+    }
 
   </style>
 </head>
 <body>
   <div class="wrap">
-<nav class="site-nav" aria-label="Main"><a href="/">Home</a><a href="/moments/" aria-current="page">Moments</a><a href="/daily/">Daily</a><a href="/guides/">Guides</a><a href="/magazine/">Magazine</a><a href="/about/">About</a></nav>
-    <main>
+<a class="skip-link visually-hidden" href="#main">Skip to main content</a>
+<header>
+<nav class="site-nav" aria-label="Main"><ul role="list"><li><a href="/">Home</a></li><li><a href="/moments/" aria-current="page">Moments</a></li><li><a href="/daily/">Daily</a></li><li><a href="/guides/">Guides</a></li><li><a href="/magazine/">Magazine</a></li><li><a href="/calendar/">Calendar</a></li><li><a href="/about/">About</a></li></ul></nav>
+</header>
+    <main id="main" tabindex="-1">
       <p class="crumbs"><a href="/">Home</a> / Moments</p>
       <header>
         <h1>One day, eleven moments</h1>
